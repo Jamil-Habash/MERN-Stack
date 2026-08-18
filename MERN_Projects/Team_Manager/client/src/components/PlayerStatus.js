@@ -53,19 +53,12 @@ export default ({ playerId, onBack }) => {
         <div className="player-status">
             <button onClick={onBack} className="back-btn">← Back</button>
             <h2>Player Status - {player.name}</h2>
-            
-            <div className="games-tabs">
-                {games.map(game => (
-                    <a key={game.id} href={`#/status/${playerId}?game=${game.id}`} className="game-tab">
-                        {game.name}
-                    </a>
-                ))}
-            </div>
 
             <table>
                 <thead>
                     <tr>
                         <th>Player Name</th>
+                        <th>Game</th>
                         <th colSpan="3">Actions</th>
                     </tr>
                 </thead>
@@ -77,6 +70,7 @@ export default ({ playerId, onBack }) => {
                         return (
                             <tr key={game.id}>
                                 <td>{player.name}</td>
+                                <td>game {game.id}</td>
                                 <td>
                                     <button 
                                         className={`status-btn ${getStatusColor('Playing')} ${currentStatus === 'Playing' ? 'active' : ''}`}

@@ -18,7 +18,7 @@ module.exports = {
             console.log("Error creating player:", error);
             res.status(400).json({ 
                 message: error.message,
-                errors: error.errors || null
+                errors: error.errors
             });
         }
     },
