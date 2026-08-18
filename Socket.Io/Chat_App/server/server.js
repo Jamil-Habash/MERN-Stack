@@ -10,7 +10,6 @@ app.use(express.urlencoded({ extended: true }));
 require('./server/config/mongoose.config');
 
 const port = process.env.PORT;
-//require('./server/routes/author.routes')(app);
 
 const server = app.listen(port, () => console.log(`Listening on port: ${port}`));
 const io = require('socket.io')(server, {cors: true});
