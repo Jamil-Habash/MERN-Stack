@@ -15,7 +15,11 @@ module.exports = {
             const newPlayer = await Player.create(req.body);
             res.json(newPlayer);
         } catch (error) {
-            res.status(400).json(error);
+            console.log("Error creating player:", error);
+            res.status(400).json({ 
+                message: error.message,
+                errors: error.errors || null
+            });
         }
     },
 

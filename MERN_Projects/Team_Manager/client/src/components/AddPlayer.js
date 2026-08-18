@@ -37,7 +37,8 @@ export default ({ onPlayerAdded }) => {
             })
             .catch(err => {
                 console.log(err);
-                setErrors({ submit: 'Error adding player' });
+                const errorMsg = err.response?.data?.message || 'Error adding player';
+                setErrors({ submit: errorMsg });
             });
     };
 
