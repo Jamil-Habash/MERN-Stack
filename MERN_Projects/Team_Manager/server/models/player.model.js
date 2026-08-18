@@ -34,7 +34,6 @@ playerSchema.pre('save', function(next) {
             { gameId: 3, status: 'Undecided' }
         ];
     }
-    next();
 });
 
 module.exports = mongoose.model('Player', playerSchema);
